@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 # @Author: prabhakar
 # @Date:   2016-04-16 21:03:43
-# @Last Modified by:   prabhakar
-# @Last Modified time: 2016-04-18 00:23:34
+# @Last Modified by:   Prabhakar Gupta
+# @Last Modified time: 2016-04-18 00:47:19
+
+import operator
+
 
 def start(file_name):
 	word_list = []
@@ -39,24 +42,15 @@ def clean_word_list(word_list):
 def create_frequency_dictionary(word_list):
 	word_count = {}
 
-	# count = 1
 	for word in word_list:
-		# if count > 10:
-		# 	break
-
 		if word in word_count:
 			word_count[word] += 1
 		else:
 			word_count[word] = 1
 
-		# count += 1
 
-	for key,value in word_count:
-		pass
-		# print("1")
-		# print(key, value)
-		# 
-	# print(word_count)
+	for key,value in sorted(word_count.items(), key=operator.itemgetter(0)):
+		print(key, value)
 
 
 filename = r"text-file"
