@@ -2,7 +2,7 @@
 # @Author: prabhakar
 # @Date:   2016-04-16 21:03:43
 # @Last Modified by:   Prabhakar Gupta
-# @Last Modified time: 2016-04-18 00:47:19
+# @Last Modified time: 2016-04-18 02:48:28
 
 import operator
 
@@ -49,7 +49,7 @@ def create_frequency_dictionary(word_list):
 			word_count[word] = 1
 
 
-	for key,value in sorted(word_count.items(), key=operator.itemgetter(0)):
+	for key,value in sorted(word_count.items(), key=operator.itemgetter(1), reverse=True):
 		print(key, value)
 
 
